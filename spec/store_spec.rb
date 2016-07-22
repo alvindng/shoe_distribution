@@ -17,5 +17,10 @@ describe Store do
     end
   end
 
-
+  describe('name') do
+    it "converts the name of the store to title case" do
+      test_store = Store.create({:name => 'champs'})
+      expect(test_store.name()).to(eq('Champs'))
+    end
+  end
 end
