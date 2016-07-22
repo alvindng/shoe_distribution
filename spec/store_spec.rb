@@ -11,11 +11,11 @@ describe Store do
   end
 
   describe('save') do
-    it "validates presence of description" do
+    it "validates presence of store name" do
       test_store = Store.create({:name => ''})
       expect(test_store.save()).to(eq(false))
     end
   end
 
-  
+
 end

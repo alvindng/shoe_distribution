@@ -9,4 +9,11 @@ describe Brand do
       expect(test_brand.stores).to(eq([test_store]))
     end
   end
+
+  describe('save') do
+    it "validates the presence of a brand name" do
+      test_brand = Brand.create({:name => ''})
+      expect(test_brand.save()).to(eq(false))
+    end
+  end
 end
