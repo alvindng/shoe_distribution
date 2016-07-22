@@ -8,6 +8,11 @@ get('/') do
   erb(:index)
 end
 
-get('/shoes') do
+get('/stores') do
+  @stores = Store.all()
   erb(:stores)
+end
+
+get('/brands') do
+  erb(:brands)
 end
