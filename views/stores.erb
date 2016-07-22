@@ -3,7 +3,7 @@ Here are all your stores:
 <% if @stores.any?()%>
   <ul>
   <% @stores.each do |store| %>
-    <li><a href="/store/<%= store.id()%>"><%=store.name()%></a></li>
+    <li><a href="/stores/<%= store.id()%>"><%=store.name()%></a></li>
   <% end %>
   </ul>
 <%else%>

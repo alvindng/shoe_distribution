@@ -19,18 +19,31 @@ post('/stores') do
   redirect('/stores')
 end
 
-get('/store/:id') do
+get('/stores/:id') do
   @store = Store.find(params.fetch('id').to_i)
   @brands = Brand.all()
   erb(:store)
 end
 
-post('/store/:id/brand/new') do
+post('/stores/:id/brand/new') do
   brand_name = params.fetch('brand_name')
   brand = Brand.create({:name => brand_name})
   @store = Store.find(params.fetch('id').to_i)
   @store.brands.push(brand)
-  redirect('/store/'.concat(@store.id().to_s()))
+  redirect('/stores/'.concat(@store.id().to_s()))
+end
+
+patch('/stores/:id') do
+  new_store_name = params.fetch('new_store_name')
+  @store = Store.find(params.fetch('id').to_i)
+  @store.update({:name => new_store_name})
+  redirect('/stores/'.concat(@store.id().to_s()))
+end
+
+delete ('/stores/:id') do
+  @store = Store.find(params.fetch('id').to_i)
+  @store.delete()
+  redirect ('/stores')
 end
 
 get('/brands') do

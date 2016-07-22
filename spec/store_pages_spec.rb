@@ -23,4 +23,12 @@ describe("the store user path", {:type => :feature}) do
     expect(page).to have_content('Nike')
   end
 
+  it('lets you edit the store name') do
+    test_store = Store.create({:name => 'Champs'})
+    visit('/stores')
+    click_link('Champs')
+    fill_in('new_store_name', :with => "Nike Town")
+    click_button('Update Store')
+    expect(page).to have_content('Nike Town')
+  end
 end
