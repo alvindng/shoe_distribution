@@ -50,3 +50,23 @@ get('/brands') do
   @brands = Brand.all()
   erb(:brands)
 end
+
+post('/brands') do
+  brand_name = params.fetch('brand_name')
+  @brand = Brand.create({:name => brand_name})
+  redirect('/brands')
+end
+
+get('/brands/:id') do
+  @brand = Brand.find(params.fetch('id').to_i)
+  @stores = Store.all()
+  erb(:brand)
+end
+
+post('/brands/:id/store/new') do
+  store_name = params.fetch('store_name')
+  store = Store.create({:name => store_name})
+  @brand = Brand.find(params.fetch('id').to_i)
+  @brand.stores.push(store)
+  redirect('/brands/'.concat(@brand.id().to_s()))
+end
