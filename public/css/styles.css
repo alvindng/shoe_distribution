@@ -1,0 +1,15 @@
+h1, h3{
+  text-align: center;
+}
+body {
+  background-color: rgba(207, 226, 232, .9);
+  text-align: center;
+}
+
+.well {
+  background-color: rgba(7, 189, 250, 0.5);
+}
+
+ul {
+  list-style-type: none;
+}
