@@ -10,27 +10,34 @@
 <%else%>
 <h2>This store does not have any brands yet</h2>
 <% end %>
-
-<h3>Add a Brand</h3>
-
-<form class="" action="/stores/<%=@store.id%>/brand/new" method="post">
-  <label for="brand_name">Enter Brand Name:</label>
-  <input type="text" name="brand_name" value="">
-  <button type="submit" name="button">Add Brand</button>
-</form>
-
-<h3>Update <%= @store.name %> </h3>
-<form action="/stores/<%= @store.id %>" method="post">
-  <input name="_method" type="hidden" value="patch">
-  <label for="new_store_name">New Name:</label>
-  <input id="new_store_name" name="new_store_name" type="text">
-  <button type="submit">Update Store</button>
-</form>
+<div class="row">
+  <div class="col-sm-6">
+    <h3>Add a Brand</h3>
+    <div class="well">
+      <form class="form-group" action="/stores/<%=@store.id%>/brand/new" method="post">
+        <label for="brand_name">Enter Brand Name:</label>
+        <input class="form-control" type="text" name="brand_name" value="">
+        <button class="btn btn-success" type="submit" name="button">Add Brand</button>
+      </form>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <h3>Update <%= @store.name %> </h3>
+    <div class="well">
+      <form class="form-group" action="/stores/<%= @store.id %>" method="post">
+        <input name="_method" type="hidden" value="patch">
+        <label for="new_store_name">New Name:</label>
+        <input class="form-control" id="new_store_name" name="new_store_name" type="text">
+        <button class="btn btn-success" type="submit">Update Store</button>
+      </form>
+    </div>
+  </div>
+</div>
 
 <h3>Delete <%= @store.name %></h3>
-<form action="/stores/<%= @store.id %>" method="post">
-  <input name="_method" type="hidden" value="delete">
-  <button type="submit">Delete Store</button>
-</form>
+  <form class="form-group" action="/stores/<%= @store.id %>" method="post">
+    <input name="_method" type="hidden" value="delete">
+    <button class="btn btn-success" type="submit">Delete Store</button>
+  </form>
 
 <a href="/">Home</a>

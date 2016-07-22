@@ -12,9 +12,12 @@
 <% end %>
 
 <h3>Add a Store</h3>
+<div class="well">
+  <form class="form-group" action="/brands/<%=@brand.id%>/store/new" method="post">
+    <label for="store_name">Enter Store Name:</label>
+    <input class="form-control" type="text" name="store_name" value="">
+    <button class="btn btn-success" type="submit" name="button">Add Store</button>
+  </form>
+</div>
 
-<form class="" action="/brands/<%=@brand.id%>/store/new" method="post">
-  <label for="store_name">Enter Store Name:</label>
-  <input type="text" name="store_name" value="">
-  <button type="submit" name="button">Add Store</button>
-</form>
+<a href="/">Home</a>

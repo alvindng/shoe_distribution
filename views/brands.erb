@@ -11,10 +11,12 @@
 <% end %>
 
 <h3>Add a Brand</h3>
-<form class="" action="/brands" method="post">
-  <label for="brand_name">Enter Brand Name:</label>
-  <input type="text" name="brand_name" value="">
-  <button type="submit" name="button">Add Brand</button>
-</form>
+<div class="container well">
+  <form class="form-group" action="/brands" method="post">
+    <label for="brand_name">Enter Brand Name:</label>
+    <input type="text" name="brand_name" value="">
+    <button class="btn btn-success" type="submit" name="button">Add Brand</button>
+  </form>
+</div>
 
 <a href="/">Home</a>
