@@ -23,6 +23,7 @@ Website showcasing everything I learned in week 4 Ruby of Epicodus. This applica
 * Run commands:
   * rake db:create
   * rake db:migrate
+  * rake db:test:prepare
 * Run Sinatra with command $: ruby app.rb
 * Visit 'localhost:4567' in your browser
 
