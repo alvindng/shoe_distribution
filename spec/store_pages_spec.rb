@@ -31,4 +31,12 @@ describe("the store user path", {:type => :feature}) do
     click_button('Update Store')
     expect(page).to have_content('Nike Town')
   end
+
+  it('lets you delete the store') do
+    test_store = Store.create({:name => 'Champs'})
+    visit('/stores')
+    click_link('Champs')
+    click_button('Delete Store')
+    expect(page).to have_content('stores')
+  end
 end
