@@ -9,4 +9,13 @@ describe Store do
       expect(test_store.brands).to(eq([test_brand]))
     end
   end
+
+  describe('save') do
+    it "validates presence of description" do
+      test_store = Store.create({:name => ''})
+      expect(test_store.save()).to(eq(false))
+    end
+  end
+
+  
 end
