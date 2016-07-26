@@ -14,16 +14,15 @@
 <div class="row">
   <div class="col-sm-6">
     <h3>Add an Existing Brand</h3>
-      <form action="/stores/<%= @store.id %>/brand" method="post">
-        <input type="hidden" name="_method" value="patch">
-        <select class="" name="brand">
-          <% @brands.each do |brand| %>
-          <option value="<%= brand.id %>"><%= brand.name %></option>
-          <% end %>
-        </select>
-        <button type="submit" name="button">Apply Brand</button>
-      </form>
-
+    <form action="/stores/<%= @store.id %>/brand" method="post">
+      <input type="hidden" name="_method" value="patch">
+      <select class="" name="brand">
+        <% @brands.each do |brand| %>
+        <option value="<%= brand.id %>"><%= brand.name %></option>
+        <% end %>
+      </select>
+      <button type="submit" name="button">Apply Brand</button>
+    </form>
     <h3>Add a New Brand</h3>
     <div class="well">
       <form class="form-group" action="/stores/<%=@store.id%>/brand/new" method="post">
